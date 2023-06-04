@@ -1,5 +1,5 @@
-const {Sequelize} = require('sequelize');
-const {sequelize} = require('../config/db')
+const { Sequelize } = require("sequelize");
+const { sequelize } = require("../config/db");
 
 const { DataTypes } = Sequelize;
 
@@ -64,14 +64,13 @@ const User = sequelize.define("User", {
 
 async function makeSchema() {
   try {
-      await User.sync().then(
-        console.log('User Schema has been made')
-      )
+    await User.sync().then(console.log("User Schema has been made"));
   } catch (error) {
-      console.log(error)
+    console.log(error);
   }
 }
 
 module.exports = {
-  makeSchema
-}
+  User,
+  makeSchema,
+};
