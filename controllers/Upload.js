@@ -2,7 +2,7 @@ const { Storage } = require("@google-cloud/storage");
 const { User } = require("../models/UserModel");
 
 const storage = new Storage({
-    keyFilename: "verifikasiin-3651f29ce9dc.json"
+    keyFilename: process.env.FILENAME
 });
 
 const uploadPhoto = async (req, res) => {
