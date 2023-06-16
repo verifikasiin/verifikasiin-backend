@@ -9,6 +9,7 @@ const { verifyToken } = require("../middleware/VerifyToken");
 const { getUserById } = require("../controllers/GetUser");
 const { updateUser } = require("../controllers/UpdateUser");
 const { uploadPhoto } = require("../controllers/Upload");
+const { retrievePhoto } = require("../controllers/Retrieve");
 
 const router = express.Router();
 const upload = multer();
@@ -21,5 +22,6 @@ router.post("/api/register", Register);
 router.get("/api/users/:userId", getUserById);
 router.patch("/api/users/:userId", updateUser);
 router.post("/api/upload/:userId", upload.single("photo"), uploadPhoto);
+router.get("/api/retrieve/:userId", retrievePhoto);
 
 module.exports = router;
