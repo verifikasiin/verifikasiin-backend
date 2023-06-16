@@ -10,8 +10,6 @@ const retrievePhoto = async (req, res) => {
 
   try {
     // Retrieve the user from the database
-    // Replace this code with your actual logic to retrieve the user
-    // Here, I assume you have a User model with a 'foto_ktp' attribute
     const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({
